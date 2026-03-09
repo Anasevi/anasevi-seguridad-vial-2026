@@ -2,1439 +2,233 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.4">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crisis de Motociclistas en México | ANASEVI</title>
-<meta property="og:title" content="Crisis de mortalidad en motociclistas en México">
-<meta property="og:description" content="Las muertes de motociclistas aumentaron 87% en México. Una emergencia que se acelera.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --red-primary: #D32F2F;
-  --red-dark: #B71C1C;
-  --red-light: #FFCDD2;
-  --red-accent: #FF5252;
-  --black: #1A1A1A;
-  --dark-gray: #2D2D2D;
-  --medium-gray: #555;
-  --light-gray: #F5F5F5;
-  --white: #FFFFFF;
-  --gold: #FFB300;
-  --blue-info: #1565C0;
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+margin:0;
+background:#fff;
+color:#1A1A1A;
+line-height:1.6;
+overflow-x:hidden;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--white);
-  color: var(--black);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-  padding: 2rem;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: 
-    radial-gradient(ellipse at 20% 80%, rgba(211,47,47,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(211,47,47,0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.hero-logo {
-  width: min(280px, 70vw);
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.2s forwards;
-}
-
-.hero-badge {
-  display: inline-block;
-  background: var(--red-primary);
-  color: var(--white);
-  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 0.5rem 1.5rem;
-  border-radius: 2px;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.4s forwards;
-}
-
-.hero h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
-  line-height: 1.1;
-  max-width: 900px;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.6s forwards;
-}
-
-.hero h1 span {
-  color: var(--red-accent);
-}
-
-.hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  font-weight: 300;
-  max-width: 700px;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.8s forwards;
-}
-
-.hero-stats {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeUp 1s ease 1s forwards;
-}
-
-.hero-stat {
-  text-align: center;
-}
-
-.hero-stat-number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  color: var(--red-accent);
-  line-height: 1;
-}
-
-.hero-stat-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  margin-top: 0.3rem;
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  animation: fadeUp 1s ease 1.3s forwards, bounce 2s ease-in-out 2s infinite;
-}
-
-.scroll-indicator svg {
-  width: 28px;
-  height: 28px;
-  stroke: rgba(255,255,255,0.4);
-}
-
-/* ===== SECTION STYLES ===== */
-section {
-  padding: 5rem 2rem;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--red-primary);
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  color: var(--black);
-}
-
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--medium-gray);
-  max-width: 700px;
-  margin-bottom: 3rem;
-  line-height: 1.7;
-}
-
-/* ===== CRISIS BAR SECTION ===== */
-.crisis-bar {
-  background: var(--red-primary);
-  color: var(--white);
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.crisis-bar p {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-/* ===== TREND SECTION ===== */
-.trend-section {
-  background: var(--white);
-}
-
-.chart-container {
-  position: relative;
-  background: var(--light-gray);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-.chart-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.chart-subtitle {
-  font-size: 0.8rem;
-  color: var(--medium-gray);
-  margin-bottom: 1.5rem;
-}
-
-canvas {
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* ===== DATA GRID ===== */
-.data-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.data-card {
-  background: var(--light-gray);
-  border-radius: 12px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.data-card:hover {
-  transform: translateY(-3px);
-}
-
-.data-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--red-primary);
-}
-
-.data-card-number {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--red-primary);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.data-card-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  color: var(--black);
-}
-
-.data-card-detail {
-  font-size: 0.8rem;
-  color: var(--medium-gray);
-  line-height: 1.5;
-}
-
-/* ===== AGE SECTION ===== */
-.age-section {
-  background: var(--black);
-  color: var(--white);
-}
-
-.age-section .section-label { color: var(--red-accent); }
-.age-section .section-title { color: var(--white); }
-.age-section .section-desc { color: rgba(255,255,255,0.65); }
-
-.age-bar-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  height: 300px;
-  padding: 1rem 0;
-  margin-bottom: 1.5rem;
-}
-
-.age-bar-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-end;
-}
-
-.age-bar {
-  width: 100%;
-  max-width: 60px;
-  background: var(--red-primary);
-  border-radius: 4px 4px 0 0;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  position: relative;
-  min-height: 2px;
-  cursor: pointer;
-}
-
-.age-bar:hover {
-  background: var(--red-accent);
-  filter: brightness(1.2);
-}
-
-.age-bar-value {
-  position: absolute;
-  top: -22px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: var(--red-accent);
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.age-bar:hover .age-bar-value {
-  opacity: 1;
-}
-
-.age-bar.highlight {
-  background: var(--red-accent);
-  box-shadow: 0 0 20px rgba(255,82,82,0.3);
-}
-
-.age-bar.highlight .age-bar-value {
-  opacity: 1;
-  font-size: 0.75rem;
-}
-
-.age-bar-label {
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.5);
-  margin-top: 0.5rem;
-  text-align: center;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  height: 50px;
-}
-
-@media (min-width: 768px) {
-  .age-bar-label {
-    writing-mode: horizontal-tb;
-    transform: none;
-    height: auto;
-  }
-}
-
-.age-callout {
-  background: rgba(211,47,47,0.15);
-  border-left: 3px solid var(--red-accent);
-  padding: 1.25rem 1.5rem;
-  border-radius: 0 8px 8px 0;
-  margin-top: 1rem;
-}
-
-.age-callout strong {
-  color: var(--red-accent);
-}
-
-.age-callout p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.8);
-}
-
-/* ===== MAP / GEO SECTION ===== */
-.geo-section {
-  background: var(--white);
-}
-
-.geo-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
+section{
+padding:5rem 2rem;
 }
 
-.geo-table thead th {
-  text-align: left;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--medium-gray);
-  padding: 0.75rem 1rem;
-  border-bottom: 2px solid var(--black);
+.container{
+max-width:1100px;
+margin:auto;
 }
 
-.geo-table tbody td {
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
-}
-
-.geo-table tbody tr:hover {
-  background: var(--light-gray);
-}
-
-.geo-rank {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
-  color: var(--medium-gray);
-  width: 40px;
-}
-
-.geo-state {
-  font-weight: 600;
-}
-
-.geo-rate {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
-  color: var(--red-primary);
-}
-
-.rate-bar-bg {
-  background: var(--red-light);
-  border-radius: 4px;
-  height: 8px;
-  width: 100%;
-  max-width: 200px;
-}
-
-.rate-bar-fill {
-  background: var(--red-primary);
-  height: 100%;
-  border-radius: 4px;
-  transition: width 1s ease;
-}
-
-.geo-note {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--medium-gray);
-  margin-top: 1rem;
-}
-
-.geo-note::before {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: var(--red-primary);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* ===== CROSSING SECTION ===== */
-.crossing-section {
-  background: linear-gradient(135deg, #1A1A1A 0%, #2D1010 100%);
-  color: var(--white);
-  text-align: center;
-}
-
-.crossing-section .section-label { color: var(--gold); }
-.crossing-section .section-title { color: var(--white); max-width: 800px; margin: 0 auto 1rem; }
-.crossing-section .section-desc { color: rgba(255,255,255,0.7); margin: 0 auto 3rem; }
-
-.crossing-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.crossing-item {
-  text-align: center;
-}
-
-.crossing-year {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.crossing-numbers {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.crossing-val {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.crossing-val.pedestrian { color: #90CAF9; }
-.crossing-val.motorcycle { color: var(--red-accent); }
-
-.crossing-vs {
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.3);
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.crossing-labels {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  font-size: 0.8rem;
-}
-
-.crossing-label-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 0.4rem;
-}
-
-.crossing-arrow {
-  font-size: 2rem;
-  color: rgba(255,255,255,0.2);
-}
-
-/* ===== FACTORS SECTION ===== */
-.factors-section {
-  background: var(--light-gray);
-}
-
-.factors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.factor-card {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid #eee;
-  transition: all 0.3s ease;
-}
-
-.factor-card:hover {
-  border-color: var(--red-primary);
-  box-shadow: 0 8px 30px rgba(211,47,47,0.08);
-}
-
-.factor-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--red-light);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  font-size: 1.5rem;
-}
-
-.factor-title {
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.factor-text {
-  font-size: 0.85rem;
-  color: var(--medium-gray);
-  line-height: 1.6;
-}
-
-/* ===== RECOMMENDATIONS ===== */
-.reco-section {
-  background: var(--white);
-}
-
-.reco-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.reco-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--red-primary), var(--gold), var(--blue-info));
-  border-radius: 3px;
-}
-
-.reco-group {
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.reco-group::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  top: 0.4rem;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  border: 3px solid var(--white);
-}
-
-.reco-group.urgent::before { background: var(--red-primary); left: calc(-2rem - 2px); }
-.reco-group.medium::before { background: var(--gold); left: calc(-2rem - 2px); }
-.reco-group.long::before { background: var(--blue-info); left: calc(-2rem - 2px); }
-
-.reco-timeframe {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.reco-group.urgent .reco-timeframe { color: var(--red-primary); }
-.reco-group.medium .reco-timeframe { color: var(--gold); }
-.reco-group.long .reco-timeframe { color: var(--blue-info); }
-
-.reco-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.reco-item {
-  background: var(--light-gray);
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.reco-item:hover {
-  background: #EBEBEB;
-}
-
-.reco-item-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 0.3rem;
-}
+/* HERO */
 
-.reco-item-desc {
-  font-size: 0.8rem;
-  color: var(--medium-gray);
-  line-height: 1.5;
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#1A1A1A;
+color:#fff;
+text-align:center;
+padding:2rem;
 }
 
-/* ===== METHODOLOGY ===== */
-.method-section {
-  background: var(--light-gray);
+.hero-logo{
+width:260px;
+margin-bottom:2rem;
 }
 
-.method-box {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid #eee;
+.hero h1{
+font-family:'DM Serif Display',serif;
+font-size:clamp(2.2rem,6vw,4.5rem);
+line-height:1.1;
+max-width:900px;
 }
 
-.method-box p {
-  font-size: 0.85rem;
-  color: var(--medium-gray);
-  line-height: 1.8;
-  margin-bottom: 1rem;
+.hero span{
+color:#FF5252;
 }
 
-.method-box p:last-child { margin-bottom: 0; }
-
-.method-tag {
-  display: inline-block;
-  background: var(--light-gray);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--medium-gray);
-}
-
-/* ===== CTA / FOOTER ===== */
-.cta-section {
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-.cta-section .section-title {
-  color: var(--white);
-  max-width: 700px;
-  margin: 0 auto 1rem;
-}
-
-.cta-desc {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.65);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-}
-
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 2rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.3s;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.cta-btn-primary {
-  background: var(--red-primary);
-  color: var(--white);
-}
-
-.cta-btn-primary:hover {
-  background: var(--red-dark);
-  transform: translateY(-2px);
-}
-
-.cta-btn-secondary {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.cta-btn-secondary:hover {
-  border-color: var(--white);
-  transform: translateY(-2px);
-}
-
-.footer {
-  padding: 2rem;
-  text-align: center;
-  background: var(--black);
-  border-top: 1px solid rgba(255,255,255,0.1);
+.hero-subtitle{
+font-size:1.2rem;
+max-width:650px;
+opacity:.8;
+margin-top:1rem;
 }
 
-.footer-logo {
-  width: 160px;
-  margin-bottom: 1rem;
+.hero-stats{
+display:flex;
+gap:3rem;
+margin-top:3rem;
+flex-wrap:wrap;
+justify-content:center;
 }
 
-.footer p {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.6;
+.hero-stat-number{
+font-family:'JetBrains Mono',monospace;
+font-size:3rem;
+color:#FF5252;
 }
 
-.footer a {
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: var(--white);
-}
+/* CRISIS BAR */
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.crisis-bar{
+background:#D32F2F;
+color:#fff;
+text-align:center;
+padding:3rem 2rem;
+font-family:'DM Serif Display',serif;
+font-size:1.6rem;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
-}
+/* SECTIONS */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+.section-title{
+font-family:'DM Serif Display',serif;
+font-size:2.6rem;
+margin-bottom:1rem;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section-desc{
+max-width:700px;
+color:#555;
+margin-bottom:2rem;
 }
 
-/* ===== COUNTER ANIMATION ===== */
-.counter { display: inline-block; }
+/* CTA */
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  section { padding: 3.5rem 1.25rem; }
-  .hero-stats { gap: 2rem; }
-  .age-bar-chart { height: 200px; gap: 3px; }
-  .crossing-numbers { gap: 0.5rem; }
-  .crossing-val { font-size: 1.4rem; }
-  .reco-timeline { padding-left: 1.5rem; }
-  .geo-table { font-size: 0.8rem; }
-  .geo-table thead th, .geo-table tbody td { padding: 0.6rem 0.5rem; }
+.cta-section{
+background:#1A1A1A;
+color:#fff;
+text-align:center;
+padding:5rem 2rem;
 }
 
-/* ===== SHARE BAR ===== */
-.share-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(26,26,26,0.95);
-  backdrop-filter: blur(10px);
-  padding: 0.75rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  z-index: 100;
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
+.cta-buttons{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:2rem;
 }
 
-.share-bar.visible {
-  transform: translateY(0);
+.cta-btn{
+padding:.9rem 2rem;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
 }
 
-.share-bar-text {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
+.cta-btn-primary{
+background:#D32F2F;
+color:#fff;
 }
 
-.share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  transition: opacity 0.2s;
+.cta-btn-secondary{
+border:1px solid #fff;
+color:#fff;
 }
 
-.share-btn:hover { opacity: 0.85; }
-.share-btn.x { background: #000; border: 1px solid #333; }
-.share-btn.fb { background: #1877F2; }
-.share-btn.wa { background: #25D366; }
-.share-btn.li { background: #0A66C2; }
 </style>
 </head>
+
 <body>
 
-<!-- HERO -->
 <section class="hero">
-  <img src="https://www.anasevi.org.mx/wp-content/uploads/2023/06/ANASEVI-LOGO-HORIZONTAL-BLANCO.png" 
-       alt="ANASEVI - Alianza Nacional por la Seguridad Vial" 
-       class="hero-logo"
-       onerror="this.style.display='none'">
-  <div class="hero-badge">Policy Brief · Febrero 2026</div>
-  <h1>Crisis de mortalidad en motociclistas: <span>una emergencia que se acelera</span></h1>
-  <p class="hero-subtitle">Mientras las muertes de peatones, ciclistas y ocupantes de vehículo disminuyen, los motociclistas son el único grupo con crecimiento sostenido en México.</p>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-number counter" data-target="87">0</div>
-      <div class="hero-stat-label">% aumento 2015-2023</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-number counter" data-target="17754">0</div>
-      <div class="hero-stat-label">muertes en 9 años</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-number">+<span class="counter" data-target="5.8" data-decimals="1">0</span>%</div>
-      <div class="hero-stat-label">crecimiento anual</div>
-    </div>
-  </div>
-  <div class="scroll-indicator">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-  </div>
+
+<img src="https://www.anasevi.org.mx/wp-content/uploads/2023/06/ANASEVI-LOGO-HORIZONTAL-BLANCO.png"
+class="hero-logo">
+
+<h1>Crisis de mortalidad en motociclistas:
+<span>una emergencia que se acelera</span></h1>
+
+<p class="hero-subtitle">
+Mientras las muertes de peatones, ciclistas y ocupantes de vehículo disminuyen,
+los motociclistas son el único grupo con crecimiento sostenido en México.
+</p>
+
+<div class="hero-stats">
+
+<div>
+<div class="hero-stat-number">87%</div>
+<div>% aumento 2015-2023</div>
+</div>
+
+<div>
+<div class="hero-stat-number">17,754</div>
+<div>muertes en 9 años</div>
+</div>
+
+<div>
+<div class="hero-stat-number">+5.8%</div>
+<div>crecimiento anual</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- CRISIS BAR -->
 <div class="crisis-bar">
-  <p>En 2015 morían <strong>3 peatones</strong> por cada motociclista. En 2023 la proporción es <strong>prácticamente 1:1</strong>. De continuar la tendencia, los motociclistas serán la segunda causa de muerte vial en México.</p>
+En 2015 morían <strong>3 peatones</strong> por cada motociclista.
+En 2023 la proporción es prácticamente <strong>1:1</strong>.
 </div>
 
-<!-- TREND SECTION -->
-<section class="trend-section">
-  <div class="container reveal">
-    <div class="section-label">Tendencia nacional</div>
-    <div class="section-title">El único grupo que crece</div>
-    <p class="section-desc">Las tasas estandarizadas por edad muestran una divergencia alarmante: mientras todos los demás usuarios viales disminuyen, los motociclistas se aceleran.</p>
-    
-    <div class="chart-container">
-      <div class="chart-title">Tasas de mortalidad vial por tipo de usuario, México 2015–2023</div>
-      <div class="chart-subtitle">Tasa estandarizada por edad (ASR) por 100,000 hab. · Población estándar OMS · Fuente: INEGI/CONAPO</div>
-      <canvas id="trendChart" height="300"></canvas>
-    </div>
+<section>
 
-    <div class="data-grid">
-      <div class="data-card reveal">
-        <div class="data-card-number">2,885</div>
-        <div class="data-card-label">Motociclistas fallecidos en 2023</div>
-        <div class="data-card-detail">Incremento desde 1,541 en 2015</div>
-      </div>
-      <div class="data-card reveal">
-        <div class="data-card-number">+12.4%</div>
-        <div class="data-card-label">Aceleración post-COVID</div>
-        <div class="data-card-detail">Tasa anual 2021–2023, más del doble del promedio del período</div>
-      </div>
-      <div class="data-card reveal">
-        <div class="data-card-number">7M+</div>
-        <div class="data-card-label">Motocicletas registradas</div>
-        <div class="data-card-detail">De ~2 millones en 2015 a más de 7 millones en 2023</div>
-      </div>
-      <div class="data-card reveal">
-        <div class="data-card-number">p=0.0004</div>
-        <div class="data-card-label">Significancia estadística</div>
-        <div class="data-card-detail">R²=0.89 — la tendencia más robusta de todos los usuarios viales</div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+
+<h2 class="section-title">
+El único grupo que crece
+</h2>
+
+<p class="section-desc">
+Las tasas de mortalidad muestran una divergencia alarmante:
+mientras otros usuarios viales disminuyen,
+los motociclistas siguen aumentando.
+</p>
+
+</div>
+
 </section>
 
-<!-- AGE SECTION -->
-<section class="age-section">
-  <div class="container reveal">
-    <div class="section-label">Perfil demográfico</div>
-    <div class="section-title">La mitad de las víctimas tiene entre 15 y 29 años</div>
-    <p class="section-desc">El pico en 20–24 años coincide con la edad de mayor inserción laboral informal: repartidores, mensajeros, jornaleros. La motocicleta es herramienta de trabajo.</p>
-    
-    <div class="age-bar-chart" id="ageChart"></div>
-
-    <div class="age-callout">
-      <p><strong>50.2%</strong> de todos los motociclistas fallecidos en 2023 tenían entre 15 y 29 años. <strong>~90%</strong> son hombres — un patrón consistente en todo el período y en todas las entidades.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CROSSING SECTION -->
-<section class="crossing-section">
-  <div class="container reveal">
-    <div class="section-label">El cruce inminente</div>
-    <div class="section-title">Motociclistas a punto de superar a peatones como segunda causa de muerte vial</div>
-    <p class="section-desc">La brecha se ha cerrado drásticamente en menos de una década.</p>
-    
-    <div class="crossing-visual">
-      <div class="crossing-item">
-        <div class="crossing-year">2 0 1 5</div>
-        <div class="crossing-numbers">
-          <div class="crossing-val pedestrian">4,000</div>
-          <div class="crossing-vs">vs</div>
-          <div class="crossing-val motorcycle">1,541</div>
-        </div>
-      </div>
-      <div class="crossing-arrow">→</div>
-      <div class="crossing-item">
-        <div class="crossing-year">2 0 2 3</div>
-        <div class="crossing-numbers">
-          <div class="crossing-val pedestrian">3,103</div>
-          <div class="crossing-vs">vs</div>
-          <div class="crossing-val motorcycle">2,885</div>
-        </div>
-      </div>
-    </div>
-    <div class="crossing-labels">
-      <span><span class="crossing-label-dot" style="background:#90CAF9"></span> Peatones</span>
-      <span><span class="crossing-label-dot" style="background:var(--red-accent)"></span> Motociclistas</span>
-    </div>
-  </div>
-</section>
-
-<!-- GEO SECTION -->
-<section class="geo-section">
-  <div class="container reveal">
-    <div class="section-label">Disparidades geográficas</div>
-    <div class="section-title">Una diferencia de 178 veces entre estados</div>
-    <p class="section-desc">Las tasas varían desde 0.06 en Nuevo León hasta 10.67 por 100,000 en Colima. La crisis se concentra en estados con alta penetración de motocicletas como modo de transporte cotidiano.</p>
-    
-    <table class="geo-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Entidad</th>
-          <th>ASR/100,000</th>
-          <th>Magnitud</th>
-        </tr>
-      </thead>
-      <tbody id="geoTableBody">
-      </tbody>
-    </table>
-    <div class="geo-note">Promedio nacional: 1.07 por 100,000 habitantes (2023)</div>
-  </div>
-</section>
-
-<!-- FACTORS SECTION -->
-<section class="factors-section">
-  <div class="container reveal">
-    <div class="section-label">Factores contribuyentes</div>
-    <div class="section-title">¿Qué está alimentando esta crisis?</div>
-    <p class="section-desc">La evidencia internacional y las condiciones nacionales apuntan a un conjunto de factores estructurales.</p>
-    
-    <div class="factors-grid">
-      <div class="factor-card">
-        <div class="factor-icon">📈</div>
-        <div class="factor-title">Crecimiento exponencial del parque vehicular</div>
-        <div class="factor-text">De ~2 millones a más de 7 millones de motocicletas registradas (2015-2023), impulsado por bajo costo, economía de plataformas y déficit de transporte público.</div>
-      </div>
-      <div class="factor-card">
-        <div class="factor-icon">⚖️</div>
-        <div class="factor-title">Regulación heterogénea e insuficiente</div>
-        <div class="factor-text">Implementación desigual de la Ley General de Movilidad (2022). Varios estados aún permiten licencia permanente para motocicletas.</div>
-      </div>
-      <div class="factor-card">
-        <div class="factor-icon">🛣️</div>
-        <div class="factor-title">Infraestructura vial hostil</div>
-        <div class="factor-text">Vialidades diseñadas para automóviles. Sin señalización específica, barreras con protección inferior ni mantenimiento prioritario de pavimento.</div>
-      </div>
-      <div class="factor-card">
-        <div class="factor-icon">🚑</div>
-        <div class="factor-title">Déficit en atención prehospitalaria</div>
-        <div class="factor-text">Tiempos de respuesta de emergencia inadecuados, particularmente en zonas rurales, incrementan la letalidad de los siniestros.</div>
-      </div>
-      <div class="factor-card">
-        <div class="factor-icon">📊</div>
-        <div class="factor-title">Ausencia de datos para política pública</div>
-        <div class="factor-text">Hasta este análisis, México no contaba con tasas estandarizadas de mortalidad de motociclistas a nivel subnacional para focalizar intervenciones.</div>
-      </div>
-      <div class="factor-card">
-        <div class="factor-icon">📱</div>
-        <div class="factor-title">Economía de plataformas</div>
-        <div class="factor-text">La expansión de servicios de delivery convierte a miles de jóvenes en motociclistas cotidianos sin protección laboral ni equipo adecuado.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RECOMMENDATIONS -->
-<section class="reco-section">
-  <div class="container reveal">
-    <div class="section-label">Recomendaciones de política pública</div>
-    <div class="section-title">Una estrategia nacional diferenciada</div>
-    <p class="section-desc">Tres horizontes de acción para contener y revertir la crisis.</p>
-    
-    <div class="reco-timeline">
-      <div class="reco-group urgent">
-        <div class="reco-timeframe">Urgente · 6–12 meses</div>
-        <div class="reco-items">
-          <div class="reco-item">
-            <div class="reco-item-title">Programa Nacional de Casco Seguro</div>
-            <div class="reco-item-desc">Fiscalización del casco certificado (NOM-ECE 22.06) con operativos focalizados en los 10 estados prioritarios. Meta: cobertura >90%.</div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-item-title">Eliminación de licencia permanente</div>
-            <div class="reco-item-desc">Armonización legislativa estatal: toda licencia de motocicleta con renovación periódica y evaluación de aptitudes.</div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-item-title">Sistema de vigilancia epidemiológica</div>
-            <div class="reco-item-desc">Registro nacional en tiempo real con monitoreo mensual por entidad e indicadores de alerta temprana.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reco-group medium">
-        <div class="reco-timeframe">Mediano plazo · 1–3 años</div>
-        <div class="reco-items">
-          <div class="reco-item">
-            <div class="reco-item-title">Licenciamiento gradual</div>
-            <div class="reco-item-desc">Sistema escalonado A1/A2/A que limite cilindrada según experiencia, similar al modelo europeo.</div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-item-title">NOM de infraestructura segura</div>
-            <div class="reco-item-desc">Estándares de diseño vial: barreras con under-run protection, señalización de riesgo y mantenimiento de carpeta asfáltica.</div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-item-title">Regulación de plataformas de delivery</div>
-            <div class="reco-item-desc">Corresponsabilidad en seguridad: seguro obligatorio, límites de jornada y provisión de equipo de protección.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reco-group long">
-        <div class="reco-timeframe">Largo plazo · 3–5 años</div>
-        <div class="reco-items">
-          <div class="reco-item">
-            <div class="reco-item-title">Inversión en transporte público</div>
-            <div class="reco-item-desc">La motocicleta sustituye al transporte público deficiente. Mejorar la movilidad sostenible reduce la exposición al riesgo.</div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-item-title">Investigación aplicada</div>
-            <div class="reco-item-desc">Estudios de casos y controles para identificar factores de riesgo modificables del contexto mexicano.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- METHODOLOGY -->
-<section class="method-section">
-  <div class="container reveal">
-    <div class="section-label">Metodología</div>
-    <div class="section-title">Rigor científico, datos abiertos</div>
-    
-    <div class="method-box">
-      <p>Microdatos de defunciones registradas del <strong>INEGI</strong> (2015-2023): 143,849 defunciones por accidentes de transporte (<span class="method-tag">CIE-10 V01-V99</span>). Motociclistas: <span class="method-tag">V20-V29</span>.</p>
-      <p>Tasas estandarizadas por edad mediante <strong>método directo</strong> con la Población Estándar Mundial de la OMS. Denominadores de las Proyecciones de Población a Mitad de Año 2023 del <strong>CONAPO</strong>.</p>
-      <p>Cambio porcentual anual (APC) por <strong>regresión log-lineal</strong>, excluyendo 2020 por anomalía de movilidad COVID-19. Análisis en Python con pandas, numpy, scipy y matplotlib.</p>
-      <p>Los datos y scripts están disponibles para replicación bajo solicitud.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="cta-section">
-  <div class="container reveal">
-    <div class="section-title" style="font-family:'DM Serif Display',serif;">Esta crisis se puede prevenir, pero el tiempo se agota</div>
-    <p class="cta-desc">Cada día que pasa sin acción se traduce en vidas perdidas. Es momento de poner a los motociclistas en la agenda de seguridad vial de México.</p>
-    <div class="cta-buttons">
-      <a href="https://www.anasevi.org.mx/" target="_blank" class="cta-btn cta-btn-primary">Visitar ANASEVI →</a>
-      <a href="https://www.facebook.com/anasevimx" target="_blank" class="cta-btn cta-btn-secondary">Seguir en redes</a>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <img src="https://www.anasevi.org.mx/wp-content/uploads/2023/06/ANASEVI-LOGO-HORIZONTAL-BLANCO.png" 
-       alt="ANASEVI" class="footer-logo" onerror="this.style.display='none'">
-  <p><strong>Dr. Arturo Cervantes Trejo</strong> · Presidente, ANASEVI<br>
-  cervantes@post.harvard.edu · <a href="https://twitter.com/ahaukine">@ahaukine</a> · <a href="https://twitter.com/Anasevi_Mexico">@Anasevi_Mexico</a></p>
-  <p style="margin-top:0.75rem;">Cervantes Trejo, A. (2026). <em>Crisis de mortalidad en motociclistas en México: una emergencia que se acelera.</em> Policy Brief. ANASEVI.</p>
-  <p style="margin-top:0.5rem;"><a href="https://www.anasevi.org.mx/">www.anasevi.org.mx</a></p>
-</footer>
+<h2 class="section-title">
+Esta crisis se puede prevenir,
+pero el tiempo se agota
+</h2>
 
-<!-- SHARE BAR -->
-<div class="share-bar" id="shareBar">
-  <span class="share-bar-text">Comparte esta información:</span>
-  <a class="share-btn x" href="https://twitter.com/intent/tweet?text=Crisis%20de%20mortalidad%20en%20motociclistas%20en%20M%C3%A9xico%3A%20%2B87%25%20en%209%20a%C3%B1os.%20La%20mitad%20de%20las%20v%C3%ADctimas%20tiene%20entre%2015%20y%2029%20a%C3%B1os.%20%40Anasevi_Mexico&url=https://www.anasevi.org.mx/" target="_blank">𝕏 Post</a>
-  <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.anasevi.org.mx/" target="_blank">Facebook</a>
-  <a class="share-btn wa" href="https://api.whatsapp.com/send?text=Crisis%20de%20mortalidad%20en%20motociclistas%20en%20M%C3%A9xico%3A%20%2B87%25%20en%209%20a%C3%B1os.%20Datos%20de%20ANASEVI%3A%20https%3A%2F%2Fwww.anasevi.org.mx%2F" target="_blank">WhatsApp</a>
-  <a class="share-btn li" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.anasevi.org.mx/&title=Crisis%20de%20mortalidad%20en%20motociclistas%20en%20M%C3%A9xico&summary=Las%20muertes%20aumentaron%2087%25%20entre%202015%20y%202023" target="_blank">LinkedIn</a>
+<p class="section-desc" style="color:#ccc;margin:auto;">
+Cada día sin acción se traduce en vidas perdidas.
+Es momento de poner a los motociclistas en la agenda
+de seguridad vial de México.
+</p>
+
+<div class="cta-buttons">
+
+<a href="https://www.anasevi.org.mx/"
+target="_blank"
+class="cta-btn cta-btn-primary">
+Visitar ANASEVI
+</a>
+
+<a href="https://www.facebook.com/anasevimx"
+target="_blank"
+class="cta-btn cta-btn-secondary">
+Seguir en redes
+</a>
+
 </div>
 
-<script>
-// ===== DATA =====
-const ageData = [
-  { label: '0-4', value: 15 },
-  { label: '5-9', value: 20 },
-  { label: '10-14', value: 45 },
-  { label: '15-19', value: 469, highlight: true },
-  { label: '20-24', value: 547, highlight: true },
-  { label: '25-29', value: 433, highlight: true },
-  { label: '30-34', value: 310 },
-  { label: '35-39', value: 250 },
-  { label: '40-44', value: 195 },
-  { label: '45-49', value: 155 },
-  { label: '50-54', value: 120 },
-  { label: '55-59', value: 95 },
-  { label: '60-64', value: 70 },
-  { label: '65-69', value: 55 },
-  { label: '70-74', value: 40 },
-  { label: '75-79', value: 30 },
-  { label: '80+', value: 36 }
-];
-
-const geoData = [
-  { rank: 1, state: 'Colima', rate: 10.67 },
-  { rank: 2, state: 'Tabasco', rate: 10.62 },
-  { rank: 3, state: 'Yucatán', rate: 5.43 },
-  { rank: 4, state: 'Zacatecas', rate: 4.19 },
-  { rank: 5, state: 'Nayarit', rate: 3.61 },
-  { rank: 6, state: 'Quintana Roo', rate: 3.28 },
-  { rank: 7, state: 'Campeche', rate: 2.89 },
-  { rank: 8, state: 'Sinaloa', rate: 2.55 },
-  { rank: 9, state: 'Oaxaca', rate: 2.31 },
-  { rank: 10, state: 'Chiapas', rate: 2.14 }
-];
-
-// ===== COUNTER ANIMATION =====
-function animateCounters() {
-  document.querySelectorAll('.counter').forEach(counter => {
-    if (counter.dataset.animated) return;
-    const target = parseFloat(counter.dataset.target);
-    const decimals = parseInt(counter.dataset.decimals || '0');
-    const duration = 2000;
-    const start = performance.now();
-    
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = eased * target;
-      
-      if (decimals > 0) {
-        counter.textContent = current.toFixed(decimals);
-      } else {
-        counter.textContent = Math.floor(current).toLocaleString('es-MX');
-      }
-      
-      if (progress < 1) requestAnimationFrame(update);
-      else counter.dataset.animated = 'true';
-    }
-    requestAnimationFrame(update);
-  });
-}
-
-// ===== AGE CHART =====
-function buildAgeChart() {
-  const container = document.getElementById('ageChart');
-  const maxVal = Math.max(...ageData.map(d => d.value));
-  
-  ageData.forEach(d => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'age-bar-wrapper';
-    
-    const bar = document.createElement('div');
-    bar.className = 'age-bar' + (d.highlight ? ' highlight' : '');
-    bar.style.height = `${(d.value / maxVal) * 100}%`;
-    
-    const val = document.createElement('div');
-    val.className = 'age-bar-value';
-    val.textContent = d.value;
-    bar.appendChild(val);
-    
-    const label = document.createElement('div');
-    label.className = 'age-bar-label';
-    label.textContent = d.label;
-    
-    wrapper.appendChild(bar);
-    wrapper.appendChild(label);
-    container.appendChild(wrapper);
-  });
-}
-
-// ===== GEO TABLE =====
-function buildGeoTable() {
-  const tbody = document.getElementById('geoTableBody');
-  const maxRate = geoData[0].rate;
-  
-  geoData.forEach(d => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="geo-rank">${d.rank}</td>
-      <td class="geo-state">${d.state}</td>
-      <td class="geo-rate">${d.rate.toFixed(2)}</td>
-      <td>
-        <div class="rate-bar-bg">
-          <div class="rate-bar-fill" style="width:${(d.rate / maxRate) * 100}%"></div>
-        </div>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-// ===== TREND CHART (Canvas) =====
-function drawTrendChart() {
-  const canvas = document.getElementById('trendChart');
-  const ctx = canvas.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  
-  const rect = canvas.parentElement.getBoundingClientRect();
-  canvas.width = rect.width * dpr;
-  canvas.height = 300 * dpr;
-  canvas.style.width = rect.width + 'px';
-  canvas.style.height = '300px';
-  ctx.scale(dpr, dpr);
-  
-  const W = rect.width;
-  const H = 300;
-  const pad = { top: 30, right: 30, bottom: 45, left: 50 };
-  const cW = W - pad.left - pad.right;
-  const cH = H - pad.top - pad.bottom;
-  
-  const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-  
-  const series = {
-    motorcycle: { data: [0.61, 0.66, 0.73, 0.78, 0.83, 0.68, 0.85, 0.94, 1.07], color: '#D32F2F', label: 'Motociclistas', width: 3 },
-    pedestrian: { data: [3.30, 3.10, 2.95, 2.75, 2.60, 1.90, 2.35, 2.20, 2.10], color: '#90CAF9', label: 'Peatones', width: 2 },
-    vehicle:    { data: [5.80, 5.50, 5.30, 5.00, 4.70, 3.40, 4.20, 3.90, 3.60], color: '#A5A5A5', label: 'Ocupantes vehículo', width: 2 },
-    cyclist:    { data: [0.35, 0.33, 0.32, 0.30, 0.28, 0.22, 0.26, 0.24, 0.23], color: '#66BB6A', label: 'Ciclistas', width: 1.5 }
-  };
-  
-  const allVals = Object.values(series).flatMap(s => s.data);
-  const minY = 0;
-  const maxY = Math.ceil(Math.max(...allVals));
-  
-  function xPos(i) { return pad.left + (i / (years.length - 1)) * cW; }
-  function yPos(v) { return pad.top + (1 - (v - minY) / (maxY - minY)) * cH; }
-  
-  // Grid
-  ctx.strokeStyle = '#ddd';
-  ctx.lineWidth = 0.5;
-  for (let v = 0; v <= maxY; v++) {
-    const y = yPos(v);
-    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(W - pad.right, y); ctx.stroke();
-    ctx.fillStyle = '#999'; ctx.font = '11px Plus Jakarta Sans'; ctx.textAlign = 'right';
-    ctx.fillText(v.toFixed(0), pad.left - 8, y + 4);
-  }
-  
-  // Year labels
-  ctx.fillStyle = '#999'; ctx.font = '11px Plus Jakarta Sans'; ctx.textAlign = 'center';
-  years.forEach((yr, i) => {
-    ctx.fillText(yr, xPos(i), H - pad.bottom + 20);
-    if (yr === 2020) {
-      ctx.fillStyle = 'rgba(0,0,0,0.08)';
-      ctx.fillRect(xPos(i) - cW/(years.length-1)/2, pad.top, cW/(years.length-1), cH);
-      ctx.fillStyle = '#bbb'; ctx.font = '9px Plus Jakarta Sans';
-      ctx.fillText('COVID', xPos(i), pad.top + 15);
-      ctx.fillStyle = '#999'; ctx.font = '11px Plus Jakarta Sans';
-    }
-  });
-  
-  // Draw lines
-  Object.values(series).forEach(s => {
-    ctx.strokeStyle = s.color;
-    ctx.lineWidth = s.width;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    s.data.forEach((v, i) => {
-      if (i === 0) ctx.moveTo(xPos(i), yPos(v));
-      else ctx.lineTo(xPos(i), yPos(v));
-    });
-    ctx.stroke();
-    
-    // End dot
-    const lastI = s.data.length - 1;
-    ctx.fillStyle = s.color;
-    ctx.beginPath();
-    ctx.arc(xPos(lastI), yPos(s.data[lastI]), s.width + 1, 0, Math.PI * 2);
-    ctx.fill();
-  });
-  
-  // Arrow for motorcycle trend
-  const mLast = series.motorcycle.data;
-  ctx.fillStyle = '#D32F2F';
-  ctx.font = 'bold 11px Plus Jakarta Sans';
-  ctx.textAlign = 'left';
-  ctx.fillText('↑ Motociclistas +5.8%/año', xPos(years.length - 1) + 8, yPos(mLast[mLast.length - 1]) + 4);
-  
-  // Legend
-  const legendY = H - 8;
-  let legendX = pad.left;
-  ctx.font = '10px Plus Jakarta Sans';
-  Object.values(series).forEach(s => {
-    ctx.fillStyle = s.color;
-    ctx.fillRect(legendX, legendY - 6, 14, 3);
-    ctx.fillStyle = '#666';
-    ctx.textAlign = 'left';
-    ctx.fillText(s.label, legendX + 18, legendY);
-    legendX += ctx.measureText(s.label).width + 36;
-  });
-}
-
-// ===== SCROLL REVEAL =====
-function setupReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        if (entry.target.querySelector('.counter')) animateCounters();
-      }
-    });
-  }, { threshold: 0.15 });
-  
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-// ===== SHARE BAR =====
-function setupShareBar() {
-  const bar = document.getElementById('shareBar');
-  let shown = false;
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > window.innerHeight * 0.5 && !shown) {
-      bar.classList.add('visible');
-      shown = true;
-    }
-  });
-}
-
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
-  buildAgeChart();
-  buildGeoTable();
-  drawTrendChart();
-  setupReveal();
-  setupShareBar();
-  animateCounters();
-  
-  window.addEventListener('resize', drawTrendChart);
-});
-</script>
+</section>
 
 </body>
 </html>
